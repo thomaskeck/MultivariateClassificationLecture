@@ -16,6 +16,7 @@ in the field of Deep Learning. The material does not focus on HEP and
 summarizes interesting ideas from other fields like image recognition.
 
 ### Traditional Methods
+  0. Motivation for Multivariate Classification in HEP
   1. Neyman-Pearson Lemma & Supervised Learning
   2. Discriminant Analysis & Analytical Solutions
   3. Decision Trees & Model Complexity
@@ -34,7 +35,33 @@ summarizes interesting ideas from other fields like image recognition.
   14. Backup
 
 
+## Used Material
+
+This lectures uses work of other people, in particular as interesting examples or applications for Deep Learning Techniques.
+The authors are as well cited on the corresponding slides.
+
+  * Higgs Paper used in the Motivation: https://arxiv.org/abs/1207.7235
+  * (afaik) First usage of Deep Learning in HEP: https://arxiv.org/abs/1402.4735 
+  * On the complexity of bird detection in images: https://xkcd.com/1425/
+  * Park Or Bird from Flickr: http://code.flickr.net/2014/10/20/introducing-flickr-park-or-bird/ (parkorbird.flickr.com seems to be offline)
+  * Blog Post by Andrey Karpathy on recurrent neural networks: http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+  * Neural image caption generator by Google: https://arxiv.org/abs/1411.4555
+  * Neural network for relational reasoning by Deepmind: https://arxiv.org/abs/1706.01427
+  * GANs applied to faces by indico: https://arxiv.org/abs/1511.06434
+  * Using adversarial networks in HEP: https://arxiv.org/abs/1611.01046
+  * Adversarial examples by I. Goodfellow et. al.: https://arxiv.org/abs/1412.6572
+  * Playing Atari with Reinforcment Learning by Deepmind: https://arxiv.org/abs/1312.5602
+  * AlphaGo by Deepmind: https://www.nature.com/nature/journal/v529/n7587/full/nature16961.html
+
+Some of images are taken from wikipedia:
+  * https://en.wikipedia.org/wiki/Support_vector_machine#/media/File:Svm_max_sep_hyperplane_with_margin.png
+  * https://en.wikipedia.org/wiki/Backpropagation_through_time#/media/File:Unfold_through_time.png
+  * https://en.wikipedia.org/wiki/Long_short-term_memory#/media/File:Peephole_Long_Short-Term_Memory.svg
+  * https://commons.wikimedia.org/wiki/File:GO(GAME).JPG
+
 ## Further Reading
+
+An incomplete list of interesting books and papers
 
 ### General Machine Learning 
 

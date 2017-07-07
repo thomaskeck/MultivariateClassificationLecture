@@ -9,6 +9,7 @@ print: MultivariateClassificationLecturePrint.pdf
 
 clean:
 	rm -f *.aux *.log *.nav *.out *.pyg *.snm *.vrb *.toc *~
+	rm -rf _minted-*
 
 clobber: clean
 	rm -f *.pdf
