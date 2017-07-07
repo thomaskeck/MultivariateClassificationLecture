@@ -1,0 +1,100 @@
+\PassOptionsToPackage{usenames,dvipsnames,svgnames,table}{xcolor}
+\documentclass[compress]{beamer}
+\usetheme{CSC}
+
+\usepackage{minted}
+\newminted{cpp}{gobble=4,linenos}
+
+\usepackage{graphics}
+\graphicspath{{images/}}
+
+\usepackage{pgf}
+\usepackage{pgffor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{colormaps,fillbetween}
+%\pgfplotsset{compat=1.14}
+\usetikzlibrary{pgfplots.colorbrewer,pgfplots.fillbetween}
+
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{calc,intersections,matrix}
+
+\usepackage{ifthen}
+\usetikzlibrary{arrows,fadings,automata,snakes,shapes,shapes.misc,shapes.arrows,trees,positioning,calc,decorations.pathreplacing,arrows.meta}
+\usepackage[binary-units=true]{siunitx}
+\usepackage{wasysym}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{simplebox}{roundcorner=4pt,linewidth=0,backgroundcolor=blue!50!black,fontcolor=white}
+
+\usepackage{multicol}
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip1.0em}{}{}
+\makeatother
+
+\AtBeginSection[] {
+  \begin{frame}
+    \frametitle{\insertsection}
+  \vspace{-0.5cm}
+  \begin{center}
+  \begin{scriptsize}
+  \begin{multicols}{2}
+    \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+    \end{multicols}
+  \end{scriptsize}
+  \end{center}
+  \end{frame}
+}
+
+
+\tikzfading[name=arrowfading, top color=transparent!0, bottom color=transparent!95]
+\tikzset{arrowfill/.style={top color=blue!50, bottom color=blue,}}
+\tikzset{arrowstyle/.style={draw=black,arrowfill, single arrow,minimum height=#1, single arrow,
+single arrow head extend=.4cm,}}
+
+\tikzset{
+    box/.style={
+      rectangle,
+	  color=#1,
+      draw=black,
+      fill=#1,
+      thick,
+      text=black,
+      align=center,
+      rounded corners=6pt,
+      blur shadow={shadow blur steps=5},
+      minimum height=1.5em
+    }, 
+    hbox/.style={
+      rectangle,
+      draw=black,
+      fill=black,
+      thick,
+      text=white,
+      align=center,
+      rounded corners=6pt,
+      blur shadow={shadow blur steps=5},
+      minimum height=1.5em
+    }, 
+}
+
+\colorlet{tree0}{blue}
+\colorlet{tree100}{white!20!blue}
+\colorlet{tree200}{white!40!blue}
+\colorlet{tree300}{white!60!blue}
+\colorlet{tree400}{white!80!blue}
+\colorlet{tree500}{white}
+\colorlet{tree600}{white!80!orange}
+\colorlet{tree700}{white!60!orange}
+\colorlet{tree800}{white!40!orange}
+\colorlet{tree900}{white!20!orange}
+\colorlet{tree1000}{orange}

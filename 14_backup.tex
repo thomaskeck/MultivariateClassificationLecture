@@ -1,0 +1,47 @@
+\section[backup]{Backup}
+
+\begin{frame}
+  \frametitle{No Free Lunch Theorem}
+
+\begin{quote}
+any two algorithms are equivalent when their performance is averaged across all possible problems\\
+-- D. Wolpert and W. Macready
+\end{quote}
+
+\begin{center}
+\textbf{There is no best machine learning algorithm.}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{No Flattening Theorem}
+
+\textbf{Hornik -- 1990}
+\begin{quote}
+    neural networks with one hidden layer and an arbitrary, bounded, non-constant
+    activation function can approximate arbitrary functions in $L^p$
+\end{quote}
+
+\textbf{H. Lin, M. Tegmark, D. Rolnick -- 2017}
+\begin{quote}
+    deep neural networks with more than one hidden layer
+    can approximate functions of practical interest with exponentially fewer parameters than shallow neural networks
+\end{quote}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Bayesian Approach to Machine Learning}
+    \textbf{Why should our prior of the model complexity (hypothesis) change with the size of the training data?}
+     \begin{itemize}
+        \item Assume prior $p(\vec{w})$ for all (hyper-) parameters in the model
+        \item Maximize the posterior $p(\vec{w} | D) \sim p(\vec{w}) p(D | \vec{w})$
+        \item Prediction is performed by marginalizing with respect to the posterior distribution $$p(t | \vec{x}, D) = \int p(t | \vec{x}, \vec{w}) p(\vec{w} | D) \mathrm{d}\vec{w}$$
+        \item Mathematically complex due to analytically intractable integrals
+        \item Reproduces weight-decay in case of gaussian prior
+    \end{itemize}
+    \textbf{Hyper parameters can be chosen automatically using bayesian methods e.g. automatic relevance determination (ARD)}
+
+\end{frame}
+
