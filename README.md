@@ -1,5 +1,8 @@
 # Multivariate Classification Lecture for the CERN School of Computing
 
+You can find a compiled (maybe not the latest) version of the talk here:
+http://ekpwww.ekp.kit.edu/~tkeck/MultivariateClassificationLecture.pdf
+
 The lecture explains algorithms and concepts used in multivariate classification.
 Each chapter explains a specific algorithm and an associated idea or concept.
 Most parts apply to machine learning in general.
@@ -58,6 +61,11 @@ Some of images are taken from wikipedia:
   * https://en.wikipedia.org/wiki/Backpropagation_through_time#/media/File:Unfold_through_time.png
   * https://en.wikipedia.org/wiki/Long_short-term_memory#/media/File:Peephole_Long_Short-Term_Memory.svg
   * https://commons.wikimedia.org/wiki/File:GO(GAME).JPG
+
+The image of the iceberg on deep learning is obtained from a talk by H. Voss, and different versions
+can be found all over the internet. I couldn't identify the original source, so if you think you
+are the original author of the image, contact me so I can add a reference or remove the image.
+
 
 ## Further Reading
 
