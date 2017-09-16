@@ -2,6 +2,14 @@
 \documentclass[compress]{beamer}
 \usetheme{CSC}
 
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+    \usebeamertemplate{itemize item}}
+
 \usepackage{minted}
 \newminted{cpp}{gobble=4,linenos}
 
@@ -98,3 +106,32 @@ single arrow head extend=.4cm,}}
 \colorlet{tree800}{white!40!orange}
 \colorlet{tree900}{white!20!orange}
 \colorlet{tree1000}{orange}
+
+%--- Tango-Colors definieren -------------------------------------------
+\definecolor{Tblue}{HTML}{3465A4}	% tango sky blue 2
+\definecolor{Tbluedark}{HTML}{204A87}	% tango sky blue 3
+\definecolor{Tbluelight}{HTML}{729FCF}	% tango sky blue 1
+\definecolor{Tbrown}{HTML}{C17D11}	% tango chocolate 2
+\definecolor{Tbrowndark}{HTML}{8F5902}	% tango chocolate 3
+\definecolor{Tbrownlight}{HTML}{E9B96E}	% tango chocolate 1
+\definecolor{Tgray}{HTML}{888A85}	% tango aluminium 4
+\definecolor{Tgraydark}{HTML}{555753}	% tango aluminium 5
+\definecolor{Tgraydarker}{HTML}{2E3436}	% tango aluminium 5
+\definecolor{Tgraylight}{HTML}{BABDB6}	% tango aluminium 3
+\definecolor{Tgraylight2}{HTML}{E4E6E2}	% Sehr hell (für Tabellenköpfe)
+\definecolor{Tgraylight3}{HTML}{F0F2EE}	% Sehr hell (für Quelltexte)
+\definecolor{Tgreen}{HTML}{73D216}	% tango chameleon 2	
+\definecolor{Tgreendark}{HTML}{4E9A06}	% tango chameleon 3
+\definecolor{Tgreenlight}{HTML}{8AE234}	% tango chameleon 1
+\definecolor{Tred}{HTML}{CC0000}	% tango scarlet red 2
+\definecolor{Treddark}{HTML}{A40000}	% tango scarlet red 3
+\definecolor{Tredlight}{HTML}{EF2929}	% tango scarlet red 1	
+\definecolor{Tlilac}{HTML}{75507B}	% tango plum 2
+\definecolor{Tlilacdark}{HTML}{5C3566}	% tango plum 3
+\definecolor{Tlilaclight}{HTML}{AD7FA8}	% tango plum 1
+\definecolor{Tyellow}{HTML}{EDD400}	% tango butter 2
+\definecolor{Tyellowdark}{HTML}{C4A000}	% tango butter 1
+\definecolor{Tyellowlight}{HTML}{FCE94F}% tango butter 3
+\definecolor{Torange}{HTML}{F57900}	% tango orange 2
+\definecolor{Torangedark}{HTML}{CE5C00}	% tango orange 1
+\definecolor{Torangelight}{HTML}{FCAF3E}% tango orange 3

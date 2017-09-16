@@ -1,7 +1,92 @@
 \section[ann]{Artificial Neural Networks / Deep Learning}
 
+\begin{frame}{Theory}
+  \textbf{Idea: Approximate Neyman Pearson Lemma with a universal function approximator}
+
+  \begin{center}
+  \begin{align*}
+    f(\vec{x}) = \tanh \left(\sum_h w_{oh} \tanh \left( \sum_i w_{hi} x_i \right) \right) & & \\
+  \end{align*}
+
+  \textbf{$\rightarrow$ can approximate any reasonable function $f: \mathcal{R}^n \rightarrow [0, 1]$}
+  
+\end{center}
+\end{frame}
+
+\begin{frame}{Theory}
+  \textbf{Can be written in form of a network}
+
+  \begin{center}
+  \begin{align*}
+    f(\vec{x}) &= x_o = \tanh{\underbrace{\sum_h w_{oh} x_h}_{a_o}} & x_h &= \tanh{\underbrace{\sum_i w_{hi} x_i}_{a_h}}
+  \end{align*}
+
+  \def\layersep{2.5cm}
+  \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
+
+    \tikzstyle{every pin edge}=[<-,shorten <=1pt]
+    \tikzstyle{neuron}=[circle,draw=black,fill=white,minimum size=17pt,inner sep=0pt]
+
+    \draw node[neuron, fill=white, pin=left:x] (I-x) at (0,-1) {$x_{i=1}$}; 
+    \draw node[neuron, fill=white, pin=left:y] (I-y) at (0,-2) {$x_{i=2}$}; 
+    
+    \draw node[neuron, fill=white] (H-1) at (\layersep,-0.5) {$x_{h=1}$}; 
+    \draw node[neuron, fill=white] (H-2) at (\layersep,-1.5) {$x_{h=2}$}; 
+    \draw node[neuron, fill=white] (H-3) at (\layersep,-2.5) {$x_{h=3}$}; 
+
+    \draw node[neuron,fill=white,pin={[pin edge={->}]right:$f(\vec{x})$}, right of=H-2] (O) {$x_o$}; 
+    
+    \draw[line width=1pt, color=black] (I-x) -> (H-1);
+    \draw[line width=0.5pt, color=black] (I-x) -> (H-2);
+    \draw[line width=0.8pt, color=black] (I-x) -> (H-3);
+    \draw[line width=0.6pt, color=black] (I-y) -> (H-1);
+    \draw[line width=0.8pt, color=black] (I-y) -> (H-2);
+    \draw[line width=0.3pt, color=black] (I-y) -> (H-3);
+    
+    \draw[line width=0.7pt, color=black] (H-1) -> (O);
+    \draw[line width=1.3pt, color=black] (H-2) -> (O);
+    \draw[line width=1.1pt, color=black] (H-3) -> (O);
+        
+
+    \draw node[above of=H-1, node distance=1cm] (hl) {Hidden layer};
+    \draw node[left of=hl] {Input layer};
+    \draw node[right of=hl] {Output layer};
+
+\end{tikzpicture} 
+\end{center}
+\end{frame}
+
+\begin{frame}{Theory}
+  \vspace{1em}
+  \textbf{Idea: Choose weights so that they minimize a loss-function.}
+
+  \vspace{1em}
+  \textbf{Loss Function}
+  \begin{align*}
+    \mathcal{L} \left( x_o \right) &= \frac{1}{2} \left( x_o - t \right)^2 &  \mathcal{L} \left( x_h \right) &= \mathcal{L} \left( x_o(x_h) \right)
+  \end{align*}
+
+  \textbf{Backpropagation Algorithm}
+  \begin{align*}
+    \frac{\mathrm{d}\mathcal{L}}{\mathrm{d}w} &= \frac{\partial \mathcal{L}}{\partial x} \cdot \frac{\partial x}{\partial a} \cdot \frac{\partial a}{\partial w}
+  \end{align*}
+
+  \vspace{-2.5em}
+  \begin{center}
+    \begin{tikzpicture}[
+        yscale=0.4,
+        xscale=0.7
+      ]
+      \draw[->,line width=1pt,Black] (0,0) -> (0,9.5) node[above] {$\mathcal{L}$};
+      \draw[->,line width=1pt,Black] (0,0) -> (12,0) node[right] {$w_{ij}$} ;
+      \draw [Tbluedark, line width=2pt] plot [smooth] coordinates { (0,5) (1,4.3) (2,4.2) (3,4.1) (3.5,3) (4,1) (4.5,4) (5,7) (6,3) (7,8) (7.5,6) (8,4) (9,4) (10,4.5) (11,2) (11.5,6) (12,9)};
+    \end{tikzpicture}
+  \end{center}
+
+\end{frame}
 
 \begin{frame}
+
 \frametitle{Applying Neural Networks: Forward Propagation}
 
   \def\layersep{2.5cm}

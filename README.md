@@ -61,6 +61,8 @@ Some of images are taken from wikipedia:
   * https://en.wikipedia.org/wiki/Backpropagation_through_time#/media/File:Unfold_through_time.png
   * https://en.wikipedia.org/wiki/Long_short-term_memory#/media/File:Peephole_Long_Short-Term_Memory.svg
   * https://commons.wikimedia.org/wiki/File:GO(GAME).JPG
+  * https://en.wikipedia.org/wiki/File:Supermarkt.jpg
+  * https://en.wikipedia.org/wiki/File:Philippine-stock-market-board.jpg
 
 The image of the iceberg on deep learning is obtained from a talk by H. Voss, and different versions
 can be found all over the internet. I couldn't identify the original source, so if you think you

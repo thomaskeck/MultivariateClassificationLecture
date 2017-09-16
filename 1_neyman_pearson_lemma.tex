@@ -256,13 +256,13 @@
     \frametitle{More Questions}
     \begin{center}
 		\begin{itemize}
-			\item How to obtain training data required for these models?
+      \item \textbf{How to obtain training data required for these models?}
 			\begin{itemize}
 				\item In industry usually historical data ($\rightarrow$ time-series)
 				\item In HEP usually simulated data ($\rightarrow$ systematics)	
 				\item Sometimes we can use real data ($\rightarrow$ data-driven techniques)
 			\end{itemize}
-			\item How to train, optimize and evaluate the quality of the models and compare them?
+    \item \textbf{How to train, optimize and evaluate the quality of the models and compare them?}
 			\begin{itemize}
 				\item Train model on training data ($\rightarrow$ regularization techniques)
 				\item Optimize model on validation data ($\rightarrow$ hyper-parameter optimization)
@@ -271,6 +271,34 @@
 			\end{itemize}
 		\end{itemize}
     \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Classification Quality}
+
+    \begin{center}
+
+      \begin{itemize}
+        \item Misclassification Rate (= Fraction of wrongly classifier events)
+        \item Type I Error (= False Positive Rate)
+        \item Type II Error (= 1 - True Positive Rate)
+      \end{itemize}
+      \vspace{1em}
+        \textbf{Problem: Depends on the chosen cut on the classifier output!}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Classification Quality}
+    \textbf{Solution: Receiver operating characteristic}\\
+     {\small Visualizes the false positive rate (fpr) as a function of the true positive rate (tpr)}\\
+     \vspace*{1em}
+
+     \textbf{More General}\\
+     {\small Visualizes two mutually exclusive objectives as a curve in a plane}\\
+     \begin{center} 
+     \includegraphics[width=0.5\textwidth]{np_roc.png}
+     \end{center}
 \end{frame}
 
 \begin{frame}
