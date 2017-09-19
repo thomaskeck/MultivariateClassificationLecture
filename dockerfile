@@ -8,7 +8,7 @@ RUN apt-get -y update && \
     apt-get -y install python3-pip python3-virtualenv libfreetype6-dev libpng12-dev pkg-config llvm-4.0 libedit-dev git npm nodejs
 
 # Create tutorial users
-RUN for i in `seq 1 30`; do useradd -ms /bin/bash kseta_tutorial_$i; echo "kseta_tutorial_$i:***********" | chpasswd; done 
+RUN for i in `seq 1 30`; do useradd -ms /bin/bash kseta_tutorial_$i; echo "kseta_tutorial_$i:********" | chpasswd; done 
 
 ENV LANG C.UTF-8
 
@@ -49,14 +49,21 @@ RUN git clone https://github.com/thomaskeck/MultivariateClassificationLecture.gi
     for i in `seq 1 30`; do cp -r MultivariateClassificationLecture/exercises /home/kseta_tutorial_$i/; chown -R kseta_tutorial_$i /home/kseta_tutorial_$i/exercises; done 
 
 # Fix broken symlinks link
-RUN ln -s /usr/bin/nodejs /usr/bin/node && \
-    ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/libcuda.so.1
+RUN ln -s /usr/bin/nodejs /usr/bin/node 
 
-# Fix missing ld library path
-RUN echo "/usr/local/cuda/lib64/stubs/" >> /etc/ld.so.conf.d/cuda.conf && ldconfig
-
-RUN apt-get install -y wget
+RUN apt-get install -y wget nano locate && updatedb
+RUN echo "/usr/lib/nvidia-375" >> /etc/ld.so.conf.d/nvidia.conf
+# Using ldconfig doesn't work, don't know why
+# RUN ldconfig
+RUN echo '#!/bin/bash' >> /bin/startup && echo "ldconfig && jupyterhub" >> /bin/startup && chmod +x /bin/startup
 
 EXPOSE 8000
 
-CMD ["jupyterhub"]
+CMD ["startup"]
+
+#docker build -t myjupyterhub .
+#export NVIDIA_SO=$(\ls /usr/lib/nvidia-375/libnvidia* | xargs -I{} echo '-v {}:{}')
+#export DEVICES=$(\ls /dev/nvidia* | xargs -I{} echo '--device {}:{}')
+#export CUDA_SO=$(\ls /usr/lib/x86_64-linux-gnu/libcuda.* | xargs -I{} echo '-v {}:{}')
+#docker run -p 8005:8000 $CUDA_SO $NVIDIA_SO $DEVICES -it myjupyterhub:latest
+
